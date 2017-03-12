@@ -163,7 +163,7 @@ inline T&& forward_impl(typename detail::identity<T>::type&& t)
 
 template <class T>
 inline typename detail::remove_reference<T>::type&& move(T&& t)
-{  return t;   }
+{  return static_cast<typename remove_reference<T>::type&&>(t);   }
 
 }  //namespace interprocess {
 }  //namespace boost {
