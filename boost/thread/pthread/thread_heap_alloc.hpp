@@ -21,7 +21,7 @@ namespace boost
         template<typename T,typename A1>
         inline T* heap_new(A1&& a1)
         {
-            return new T(static_cast<A1&&>(a1));
+            return new T(std::move(a1));
         }
         template<typename T,typename A1,typename A2>
         inline T* heap_new(A1&& a1,A2&& a2)
