@@ -336,7 +336,7 @@ namespace boost
 #ifdef BOOST_HAS_RVALUE_REFS
     inline thread&& move(thread&& t)
     {
-        return t;
+        static_cast<thread&&>(t);
     }
 #else
     inline thread move(detail::thread_move_t<thread> t)
